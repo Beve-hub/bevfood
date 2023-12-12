@@ -1,20 +1,37 @@
-import { FlatList, ScrollView, StyleSheet, Text, View, Animated } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, View, Animated, TouchableOpacity } from 'react-native'
 import React,{useRef, useState} from 'react'
 import Slides from '../../components/Slides'
 import OnboardItem from './OnboardItem'
 import Paginator from './Paginator'
+import NextButton from './NextButton'
+import { useRouter } from 'expo-router';
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 
 const Onboarding = () => {
     const scrollX = useRef(new Animated.Value(0)).current;
     const [current, setCurrent] = useState(0);
+    const router = useRouter();
 
-    const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
+    const SlidesRef = useRef(null);
+    
+
+    const scrollTo = () => {
+        if (current > Slides.length - 1) {
+          SlidesRef.current.scrollToIndex({ index: current + 1 });
+        } else {
+          console.log('Last item.');
+        }
+      };
   return (
+    
     <View style={styles.container}>
+        
         <ScrollView  >
     
-          <FlatList data={Slides} 
+          <FlatList
+          data={Slides}
+          ref={SlidesRef} 
           renderItem={({ item }) => <OnboardItem item={item}/>} 
           horizontal={true}
           keyExtractor={(item) => item.id}
@@ -26,7 +43,11 @@ const Onboarding = () => {
           })}
           />
         </ScrollView>
-        <Paginator data={Slides}/>
+        <Paginator data={Slides} scrollX={scrollX}/>
+          <NextButton scrollTo={scrollTo}/>
+          <TouchableOpacity onPress={() => router.push('../screen/Board')} style={styles.skip} activeOpacity={0.6}>
+           <Text style={styles.skip} >Skip</Text>
+          </TouchableOpacity>
     </View>
   )
 }
@@ -38,6 +59,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
+    skip: {
+      position: 'absolute',
+      color:  "#B40404",
+      borderRadius: 100,
+      left: 20,
+      fontWeight: 'bold',
+      fontSize: 15,
+      bottom: 20,
+   }
 })
 
