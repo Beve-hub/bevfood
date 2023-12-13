@@ -1,25 +1,18 @@
-import { StatusBar, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React, { useEffect } from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native'
+import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useRouter } from 'expo-router';
-
+import {Stack} from 'expo-router'
 
 const index = () => {
     const router = useRouter();
-
-   
   return (
     <View style={styles.container}>
-      <StatusBar style="light"/>
-      <Image source={require('../assets/images/logo.png')} style={styles.lego}/>
-      <Text style={styles.logo}>BEVE FOOD</Text>
-      
-      <TouchableOpacity style={styles.btn}
-      onPress={() => router.push('./screen/Onboarding')}>
-      
-        <Text style={styles.start}>Get Started</Text>
+      <Image source={require('../assets/images/onboarding4.png')} style={styles.lego}/>
+      <Text style={styles.logo}>Quick and fast delivery to your door step.</Text>
+      <TouchableOpacity onPress={() => router.push('./screen/Onboarding')} style={styles.bop} >
+        <Text style={styles.starp}>Get Started</Text>
       </TouchableOpacity>
-
     </View>
   )
 }
@@ -28,20 +21,24 @@ export default index
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
         flex: 1,
-        justifyContent: "center",
-        backgroundColor: "#B40404",
-        alignItems: "center"
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     lego: {
-        height: wp(60),
-        width: wp(60)
+        height: wp(70),
+        width: wp(70)
     },
     logo: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: 'bold',
-        color: 'white'
+        color: '#121212',
+        width: wp(90),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        marginTop: 20
     },
     btn: {
         
@@ -53,15 +50,57 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderColor: 'black',
         borderSize: 2,
-        borderRadius: 100,
-        top: 150
+        borderRadius: 70,
+        top: 80
     },
     start: {
-        fontSize: hp(3),
-        fontWeight: 'bold',
+        fontSize: hp(2.5),
+        fontWeight: 'medium',
         justifyContent: 'center',
         alignItems: 'center',
-        display: 'flex'
-    }
+        display: 'flex',
+        gap: 5,
+    },
+    
 
+    bop: {
+        
+        height: hp(7),
+        width: wp(70),
+        justifyContent: 'center',
+        display: 'absolute',
+        alignItems: 'center',
+        backgroundColor: "#B40404",
+        borderColor: 'black',
+        borderSize: 2,
+        borderRadius: 80,
+        top: 80,
+        marginTop: 10,
+
+    },
+    
+
+    starp: {
+        fontSize: hp(2.5),
+        fontWeight: 'medium',
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        color: 'white'
+    },
+    lop: {
+        display: 'flex',
+        justifyContent: 'around',
+        alignItems: 'center',
+        borderColor: 'black',
+        textAlign: 'center',
+        top: 80,
+        marginTop: 10,
+    },
+
+    step: {
+        color:  "#B40404",
+        fontWeight: 'bold',
+
+    }
 })

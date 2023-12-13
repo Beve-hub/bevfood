@@ -6,6 +6,7 @@ import Paginator from './Paginator'
 import NextButton from './NextButton'
 import { useRouter } from 'expo-router';
 import { Colors } from 'react-native/Libraries/NewAppScreen'
+import {Stack} from 'expo-router';
 
 
 const Onboarding = () => {
@@ -26,6 +27,11 @@ const Onboarding = () => {
   return (
     
     <View style={styles.container}>
+        <Stack.Screen
+       options={{
+        headerShown: false
+       }}
+      />
         
         <ScrollView  >
     
@@ -45,7 +51,7 @@ const Onboarding = () => {
         </ScrollView>
         <Paginator data={Slides} scrollX={scrollX}/>
           <NextButton scrollTo={scrollTo}/>
-          <TouchableOpacity onPress={() => router.push('../screen/Board')} style={styles.skip} activeOpacity={0.6}>
+          <TouchableOpacity onPress={() => router.push('../screen/auth/login/Login')} style={styles.skip} activeOpacity={0.6}>
            <Text style={styles.skip} >Skip</Text>
           </TouchableOpacity>
     </View>

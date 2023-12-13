@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     dot: {
-        height:8,
+        height:5,
         borderRadius: 5,
         backgroundColor: '#B40404',
         marginHorizontal: 8,
