@@ -41,7 +41,7 @@ const ConfirmNum = () => {
           keyboardType="numeric"
         />
   
-        <TouchableOpacity onPress={() => router.push('../../../pages/Home')}  style={{height: hp(6), justifyContent: 'center', borderRadius: 10, display: 'absolute', alignItems: 'center', backgroundColor: "#B40404",}} >
+        <TouchableOpacity onPress={() => router.push('../../Home')}  style={{height: hp(6), justifyContent: 'center', borderRadius: 10, display: 'absolute', alignItems: 'center', backgroundColor: "#B40404",}} >
           <Text style={{fontSize: hp(2), fontWeight: 'medium', justifyContent: 'center', alignItems: 'center', color: 'white'}}>Next</Text>
         </TouchableOpacity>
   

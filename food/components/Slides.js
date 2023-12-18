@@ -1,6 +1,7 @@
 import IMG1 from "../assets/images/onboarding1.png"
 
 
+
 export default [
    { 
     id: '1',

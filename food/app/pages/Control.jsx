@@ -15,8 +15,8 @@ const Tab = createMaterialTopTabNavigator();
 const Control = () => {
   return (
     <Tab.Navigator screenOptions={{
-      tabBarLabelStyle: { fontSize: 10,fontWeight: 'bold'  },
-      tabBarActiveTintColor: '#B40404',
+      tabBarLabelStyle: { fontSize: 10, fontWeight: 'bold' },
+      tabBarActiveTintColor: '#B40404' ,
       tabBarInactiveTintColor: '#9A9A9A',
       tabBarItemStyle: { width: 70 },
       tabBarPressColor: '#FAD7D7',

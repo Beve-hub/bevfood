@@ -6,10 +6,14 @@ import { StatusBar } from 'expo-status-bar';
 import {SafeAreaView} from 'react-native-safe-area-context'
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import Control from './Control'
+import Control from '../pages/Control';
 
-const Home = () => {
+
+const Home = ({ count }) => {
+    const router = useRouter();
     const [text, setText] = useState('');
+   
+    
   return (
     <SafeAreaView style={styles.container} edges={['Top']}>
         <Stack.Screen
@@ -23,9 +27,10 @@ const Home = () => {
                 <Image source={require('../../assets/images/profile.png')}/>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.sec}>
+            <TouchableOpacity onPress={() => router.push('../pages/Cart')} style={styles.sec}>
              <View  style={styles.fiv}>
                 <AntDesign name="shoppingcart" size={24} color="black"/>
+                {count > 0 && <Text style={styles.count}>{count}</Text>}
              </View>
             </TouchableOpacity>     
       </View>
@@ -43,7 +48,7 @@ const Home = () => {
         <Feather name="search" size={20} color="#B40404" style={{position:'absolute', right:20, top:30 }}/>
        </View>
 
-      <Control/>
+      <Control />
     </SafeAreaView>
   )
 }
@@ -55,7 +60,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         display: 'flex',
-        margin: 10
+        margin: 10,
+        
     },
     first: {
         flexDirection: 'row',
@@ -77,5 +83,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         
-    }
+    },
+    count: {
+        position: 'absolute',
+        top: -5,
+        right: -5,
+        backgroundColor: '#B40404',
+        color: 'white',
+        borderRadius: 15,
+        padding: 5,
+        fontSize: 12,
+      }
 })
