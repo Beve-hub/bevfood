@@ -12,7 +12,7 @@ const Login = () => {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Stack.Screen
        Options={{
-        headerRight: () => <Ionicons name="arrow-back" size={24} color="black" />
+        headerRight: () => <Ionicons name="arrow-back" size={24} color="black" style={{backgroundColor: '#B40404'}}/>
        }}
       />
      

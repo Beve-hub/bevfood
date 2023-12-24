@@ -12,7 +12,11 @@ const _layout = () => {
           backgroundColor: '#F5F5F5',
         }
       }}
-    />
+    >
+      <Stack.Screen name="ProductId" options={{
+        presentation: 'fullScreenModal'
+      }} />
+    </Stack>
   )
 }
 
