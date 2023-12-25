@@ -4,9 +4,9 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 import All from './All'
 import Soup from './Soup'
-import Protein from './Protein'
 import Jollof from './Jollof'
 import Drinks from './Drinks'
+import Protein from './Protein'
  
 
 
@@ -15,7 +15,7 @@ const Tab = createMaterialTopTabNavigator();
 const Control = () => {
   return (
     <Tab.Navigator screenOptions={{
-      tabBarLabelStyle: { fontSize: 10, fontWeight: 'bold' },
+      tabBarLabelStyle: { fontSize: 14, fontWeight: 'bold', width:90,  },
       tabBarActiveTintColor: '#B40404' ,
       tabBarInactiveTintColor: '#9A9A9A',
       tabBarItemStyle: { width: 70 },
@@ -23,7 +23,7 @@ const Control = () => {
       tabBarIndicatorStyle: { backgroundColor: '' },
       tabBarShadowVisible: false
     }}>
-      <Tab.Screen name="All" component={All} />
+      <Tab.Screen name="All" component={All}  />
       <Tab.Screen name="Soup" component={Soup} />
       <Tab.Screen name="Protein" component={Protein} />
       <Tab.Screen name="Jollof" component={Jollof} />

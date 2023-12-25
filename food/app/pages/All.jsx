@@ -37,7 +37,6 @@ const FoodAll =({item,router,index, }) => {
           <Text style={{color:'white', fontSize:20, fontWeight:'bold', paddingTop:10, paddingLeft: 20}}>{item.Price}</Text>
         </View>
         <View style={{flexDirection:'row', display: 'absolute',bottom: 120, left:220}}>
-
           <TouchableOpacity style={{backgroundColor: 'white', padding: 10, borderRadius: 100 }}>
           <MaterialIcons name="favorite" size={24} color="#B40404"/>
           </TouchableOpacity>
@@ -45,8 +44,6 @@ const FoodAll =({item,router,index, }) => {
           <TouchableOpacity style={{backgroundColor: 'white',marginLeft:10, padding: 10, borderRadius: 100 }}>
           <Entypo name="shopping-cart" size={24} color="#B40404" />
           </TouchableOpacity>
-         
-          
         </View>
       </View>
   )
