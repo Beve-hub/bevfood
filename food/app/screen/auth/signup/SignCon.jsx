@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, {useState} from 'react';
 import {Stack} from 'expo-router';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
 const SignCon = () => {
@@ -11,16 +10,15 @@ const SignCon = () => {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Stack.Screen
-         Options={{
-          headerRight: () => <Ionicons name="arrow-back" size={24} color="black" />
-         }}
-        />
+        options={{
+          headerShown: false,
+        }} />
        
         <View style={{flex:1}}>
   
         <View style={{height:2, width:350, borderRadius: 5, backgroundColor: '#D9D9D9',}}>
   
-         <Text style={{height:2, width:190, backgroundColor: '#B40404',}}></Text>
+        <Text style={{height:2, width:190, backgroundColor: '#B40404',marginTop:50}}></Text>
         </View>
   
         <View style={{marginHorizontal:30}}>

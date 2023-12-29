@@ -3,23 +3,38 @@ import React, {useState} from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { useLocalSearchParams, useRouter} from  'expo-router'
+import { Fooddetails } from '../../components/Foodtype'
+import {Stack} from 'expo-router';
 
 const Payaddress = () => {
     const router = useRouter();
     const item = useLocalSearchParams();
+    const [food, setFood] = useState(Fooddetails);
     const [text, setText] = useState('');
+    
   return (
     <View style={{ justifyContent: 'center', paddingVertical: 30, paddingHorizontal:20 }}>
+      <Stack.Screen
+       Options={{
+        headerRight: () => <Ionicons name="arrow-back" size={24} color="black" style={{backgroundColor: '#B40404'}}/>
+       }}
+      />
       <Text style={{fontSize:20, fontWeight:'bold'}}>Payment Flow</Text>
 
       <View style={{ marginVertical:5, flexDirection: 'row', display:'flex', justifyContent:'space-evenly', alignItems:'center' }}>
 
       <View style={{ justifyContent: 'center', paddingVertical: 50, paddingHorizontal:20 }}>
-      <Ionicons name="location-outline" size={18} color="white" style={{backgroundColor:'#B40404', flexDirection: 'row', paddingVertical: 10,  display:'flex', justifyContent:'center', padding:5, width: wp(10), height: wp(10),borderRadius:30}} />
-      <Text style={{fontSize:13, fontWeight:'medium'}}>Address</Text>
+        <View style={{backgroundColor:'#B40404', flexDirection: 'row', paddingVertical: 10,  display:'flex', justifyContent:'center', padding:10, width: wp(10), height: wp(10),borderRadius:30}} >
+        <Ionicons name="location-outline" size={18} color="white" />
+        </View>
+        <Text style={{fontSize:13, fontWeight:'medium'}}>Address</Text>
       </View>
+
       <View>
-      <Ionicons name="card-outline" size={18} color="#878787" style={{backgroundColor:'#12121220', flexDirection: 'row',  paddingVertical: 10,  display:'flex', justifyContent:'center', padding:5, width: wp(10), height: wp(10),borderRadius:30}}/>
+        <View style={{backgroundColor:'#12121220', flexDirection: 'row',  paddingVertical: 10,  display:'flex', justifyContent:'center', padding:10, width: wp(10), height: wp(10),borderRadius:30}}>
+        <Ionicons name="card-outline" size={18} color="#878787" />
+        </View>
+      
       <Text style={{fontSize:12, fontWeight:'medium'}}>Payment</Text>
       </View>
 
@@ -64,8 +79,8 @@ const Payaddress = () => {
       </View>
 
 
-      <TouchableOpacity onPress={() => router.push({pathname: '../pages/Payment', params: item})}  style={{elevation: 10,shadowColor: '#121212', marginTop:10, flexDirection: 'row', backgroundColor:'#B40404', paddingVertical: 10,  display:'flex', justifyContent:'center', borderRadius:10  }}>
-          <Text style={{fontSize:18, fontWeight:'bold',  color: 'white', display:'flex', justifyContent: 'center',alignItems: 'center',}}>Continue</Text>
+      <TouchableOpacity onPress={() => router.push({pathname: '../pages/Method', params: item})}  style={{elevation: 10,shadowColor: '#121212', marginTop:10, flexDirection: 'row', backgroundColor:'#B40404', paddingVertical: 10,  display:'flex', justifyContent:'center', borderRadius:10  }}>
+          <Text style={{fontSize:18, fontWeight:'bold',  color: 'white', display:'flex', justifyContent: 'center',alignItems: 'center',}}>Continue{item.Price}</Text>
       </TouchableOpacity>
 
     </View>

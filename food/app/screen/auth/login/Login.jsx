@@ -5,22 +5,23 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
+
 const Login = () => {
   const router = useRouter();
   const [text, setText] = useState('');
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Stack.Screen
-       Options={{
-        headerRight: () => <Ionicons name="arrow-back" size={24} color="black" style={{backgroundColor: '#B40404'}}/>
-       }}
+        options={{
+          headerShown: false,
+        }}
       />
      
       <View style={{flex:1}}>
 
       <View style={{height:2, width:350, borderRadius: 5, backgroundColor: '#D9D9D9',}}>
 
-       <Text style={{height:2, width:350/2, backgroundColor: '#B40404',}}></Text>
+      <Text style={{height:2, width:350/2, backgroundColor: '#B40404',marginTop:50}}></Text>
       </View>
 
       <View style={{marginHorizontal:30}}>

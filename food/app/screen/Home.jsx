@@ -14,7 +14,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import Control from "../pages/Control";
-import { ShopContext } from "../../context/ShopContext";
 
 const Home = () => {
   const router = useRouter();
@@ -34,7 +33,7 @@ const Home = () => {
           onPress={() => router.push("../pages/Profile")}
           style={styles.sec}
         >
-          <Image source={require("../../assets/images/profile.png")} />
+          <Image source={require("../../assets/images/profile.png")} style={{width:50,height:50}}/>
         </TouchableOpacity>
 
         <TouchableOpacity

@@ -1,106 +1,56 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native'
-import React from 'react'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { useRouter } from 'expo-router';
-import {Stack} from 'expo-router'
+import {Stack} from 'expo-router';
 
-const index = () => {
+const Splash = () => {
     const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setIsLoading(false);
+      router.push('./screen/Onboarding'); // Use 'replace' to prevent going back to the splash screen
+    }, 2000);
+
+    // Clear the timer if the component is unmounted before the timeout
+    return () => clearTimeout(startTimer);
+  });
+
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/images/onboarding4.png')} style={styles.lego}/>
-      <Text style={styles.logo}>Quick and fast delivery to your door step.</Text>
-      <TouchableOpacity onPress={() => router.push('./screen/Onboarding')} style={styles.bop} >
-        <Text style={styles.starp}>Get Started</Text>
-      </TouchableOpacity>
+        <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Image source={require('../assets/images/logo.png')} style={styles.lego} />
+      <Text style={styles.logo}>Beve Food</Text>
     </View>
-  )
-}
+  );
+};
 
-export default index
+export default Splash;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    lego: {
-        height: wp(70),
-        width: wp(70)
-    },
-    logo: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: '#121212',
-        width: wp(90),
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        marginTop: 20
-    },
-    btn: {
-        
-        height: hp(7),
-        width: wp(70),
-        justifyContent: 'center',
-        display: 'absolute',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        borderColor: 'black',
-        borderSize: 2,
-        borderRadius: 70,
-        top: 80
-    },
-    start: {
-        fontSize: hp(2.5),
-        fontWeight: 'medium',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        gap: 5,
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#B40404'
+  },
+  lego: {
+    height: wp(70),
+    width: wp(70),
     
-
-    bop: {
-        
-        height: hp(7),
-        width: wp(70),
-        justifyContent: 'center',
-        display: 'absolute',
-        alignItems: 'center',
-        backgroundColor: "#B40404",
-        borderColor: 'black',
-        borderSize: 2,
-        borderRadius: 80,
-        top: 80,
-        marginTop: 10,
-
-    },
-    
-
-    starp: {
-        fontSize: hp(2.5),
-        fontWeight: 'medium',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        color: 'white'
-    },
-    lop: {
-        display: 'flex',
-        justifyContent: 'around',
-        alignItems: 'center',
-        borderColor: 'black',
-        textAlign: 'center',
-        top: 80,
-        marginTop: 10,
-    },
-
-    step: {
-        color:  "#B40404",
-        fontWeight: 'bold',
-
-    }
-})
+  },
+  logo: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    width: wp(90),
+    textAlign: 'center',
+    marginTop: 20,
+    color: '#ffff',
+  },
+});

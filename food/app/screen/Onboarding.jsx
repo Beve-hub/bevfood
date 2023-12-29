@@ -51,9 +51,7 @@ const Onboarding = () => {
         </ScrollView>
         <Paginator data={Slides} scrollX={scrollX}/>
           <NextButton scrollTo={scrollTo}/>
-          <TouchableOpacity onPress={() => router.push('../screen/auth/login/Login')} style={styles.skip} activeOpacity={0.6}>
-           <Text style={styles.skip} >Skip</Text>
-          </TouchableOpacity>
+         
     </View>
   )
 }

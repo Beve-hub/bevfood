@@ -11,16 +11,16 @@ const SignUp = () => {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Stack.Screen
-         Options={{
-          headerRight: () => <Ionicons name="arrow-back" size={24} color="black" />
-         }}
-        />
+        options={{
+          headerShown: false,
+        }}
+      />
        
         <View style={{flex:1}}>
   
         <View style={{height:2, width:350, borderRadius: 5, backgroundColor: '#D9D9D9',}}>
   
-         <Text style={{height:2, width:117, backgroundColor: '#B40404',}}></Text>
+         <Text style={{height:2, width:117, backgroundColor: '#B40404',marginTop:50}}></Text>
         </View>
   
         <View style={{marginHorizontal:30}}>
@@ -45,7 +45,7 @@ const SignUp = () => {
         </TouchableOpacity>
   
   
-        <Text style={{marginTop:20, marginLeft:40, fontSize:14,  justifyContent: 'center', alignItems: 'center', display:'flex'}}>Already  have an account?
+          <Text style={{marginTop:20, marginLeft:40, fontSize:14,  justifyContent: 'center', alignItems: 'center', display:'flex'}}>Already  have an account?
            <Text style={{fontWeight: 'bold', color: "#B40404", marginTop:20}} onPress={() => router.push('../login/Login')}>Sign In</Text>
           </Text>
   
