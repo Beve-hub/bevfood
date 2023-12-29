@@ -3,8 +3,8 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <View>
-      <Text>Cart</Text>
+    <View style={{flex:1, justifyContent: 'center', paddingVertical: 30, paddingHorizontal:20,alignItems:'center' }}>
+      <Text>add to your Cart</Text>
     </View>
   )
 }

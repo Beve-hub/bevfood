@@ -7,6 +7,8 @@ import { useRouter } from 'expo-router';
 const SignForm = () => {
     const router = useRouter();
     const [text, setText] = useState('');
+    const [texto, setTexto] = useState('');
+    const [texta, setTexta] = useState('');
     const [modal, setModal] = useState(false);
     const [isLoading, setIsLoading] = useState(true);  
   
@@ -32,21 +34,21 @@ const SignForm = () => {
 
 
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{  justifyContent: 'center', alignItems: 'center'}}>
         <Stack.Screen
         options={{
           headerShown: false,
         }}
        />
-       
-        <View style={{flex:1}}>
+       <Text style={{height:2, width:350, backgroundColor: '#B40404',marginTop:70}}></Text>
+        <View >
   
         <View style={{height:2, width:350, }}>
-          <Text style={{height:2, width:350, backgroundColor: '#B40404',marginTop:50}}></Text>
+          
         </View>
 
         <View style={{marginHorizontal:30}}>
-        <Text style={{fontWeight:'bold', fontSize:30, color:  "#B40404", marginTop:70 }}>Sign Up</Text>
+        <Text style={{fontWeight:'bold', fontSize:30, color:  "#B40404", marginTop:50 }}>Sign Up</Text>
         </View>
   
         <View style={{marginHorizontal:30, marginTop:60}}>
@@ -65,8 +67,8 @@ const SignForm = () => {
           <TextInput
           style={{height: 40, backgroundColor: '#DFDFDF', paddingLeft:20, marginVertical:10, borderRadius: 10, }}
           placeholder="Enter Last Name"
-          onChangeText={newText => setText(newText)}
-          value={text}
+          onChangeText={newText => setTexto(newText)}
+          value={texto}
           keyboardType="text"/>
           </View>
 
@@ -75,8 +77,8 @@ const SignForm = () => {
           <TextInput
           style={{height: 40, backgroundColor: '#DFDFDF', paddingLeft:20, marginVertical:10, borderRadius: 10, }}
           placeholder="Enter Email Address"
-          onChangeText={newText => setText(newText)}
-          value={text}
+          onChangeText={newText => setTexta(newText)}
+          value={texta}
           keyboardType="text"/>
           </View>
   

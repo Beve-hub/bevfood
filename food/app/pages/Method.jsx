@@ -107,7 +107,7 @@ const Method = () => {
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
               <Text style={{fontSize:16, fontWeight:'bold'}}>Price: </Text>
-              <Text>{item.Price}</Text>
+              <Text>NGN 3000</Text>
               </View>
           </View>
           

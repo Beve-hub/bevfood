@@ -11,6 +11,8 @@ const Payaddress = () => {
     const item = useLocalSearchParams();
     const [food, setFood] = useState(Fooddetails);
     const [text, setText] = useState('');
+    const [texto, setTexto] = useState('');
+    const [texta, setTexta] = useState('');
     
   return (
     <View style={{ justifyContent: 'center', paddingVertical: 30, paddingHorizontal:20 }}>
@@ -59,8 +61,8 @@ const Payaddress = () => {
           <TextInput
           style={{height: 40, borderWidth:  1, paddingLeft:20, marginVertical:10, borderRadius: 10, border: 10, }}
           placeholder=""
-          onChangeText={newText => setText(newText)}
-          value={text}
+          onChangeText={newText => setTexto(newText)}
+          value={texto}
           keyboardType="numeric"/>
           <Text style={{display:'absolute', marginHorizontal:10, justifyContent: 'center', bottom: 65,  width: wp(51), backgroundColor:'#F3F1F1', fontWeight:'semiBold', fontSize:16, color:  "#121212",  }}>Recievers Phone Number</Text>
           </View>
@@ -70,8 +72,8 @@ const Payaddress = () => {
           <TextInput
           style={{height: 40, borderWidth:  1, paddingLeft:20, marginVertical:10, borderRadius: 10, border: 10, }}
           placeholder=""
-          onChangeText={newText => setText(newText)}
-          value={text}
+          onChangeText={newText => setTexta(newText)}
+          value={texta}
           keyboardType="text"/>
           <Text style={{display:'absolute', marginHorizontal:10, justifyContent: 'center', bottom: 65,  width: wp(33), backgroundColor:'#F3F1F1', fontWeight:'semiBold', fontSize:16, color:  "#121212",  }}>Recievers Name</Text>
           </View>

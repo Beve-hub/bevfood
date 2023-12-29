@@ -4,8 +4,10 @@ import IMG from '../../assets/images/profile.png'
 import { EvilIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 const Profile = () => {
+  const router = useRouter();
   return (
     <View style={{ justifyContent: 'center', paddingVertical: 30, paddingHorizontal:20 }}>
       <Text style={{fontSize:25, fontWeight:'bold'}}>Profile</Text>
@@ -37,7 +39,7 @@ const Profile = () => {
         <Text style={{ fontSize: 18, fontWeight:'normal', }}>Settings</Text>
        </TouchableOpacity>
 
-       <TouchableOpacity   style={{marginTop:10, flexDirection: 'row', paddingVertical: 5,gap:10, paddingHorizontal: 10, borderRadius:10, alignItem:'center'  }}>
+       <TouchableOpacity  onPress={() => router.push('../screen/Landscreen')} style={{marginTop:10, flexDirection: 'row', paddingVertical: 5,gap:10, paddingHorizontal: 10, borderRadius:10, alignItem:'center'  }}>
        <MaterialIcons name="logout" size={24} color="black" />
         <Text style={{ fontSize: 18, fontWeight:'normal', }}>Log Out</Text>
        </TouchableOpacity>

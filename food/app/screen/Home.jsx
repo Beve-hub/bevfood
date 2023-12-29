@@ -37,7 +37,7 @@ const Home = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => router.push("Cart")}
+          onPress={() => router.push("../pages/Cart")}
           style={styles.sec}
         >
           <View style={styles.fiv}>
